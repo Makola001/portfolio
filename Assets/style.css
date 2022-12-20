@@ -8,23 +8,23 @@
 
 .container{
     display: grid;
-    height: 150vh;
+    height: 100vh;
     grid-template-columns: 0.3fr 1.5fr;
     grid-template-rows: 1fr 1.5fr 1.5fr 2fr 1.5fr 0.2fr;
     grid-template-areas:
     "nav nav"
-    "main main"
+    "header header"
     "sidebar1 about-container"
     "sidebar2 work-container"
     "sidebar3 contact-container"
     "footer footer";
-    grid-gap: 1.5rem;
+    grid-gap: 0.5rem;
     font-family: "Inter" sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     background-color: var(--main-bg-color);
-    
 
+    
 }
 
 nav{
@@ -40,14 +40,16 @@ nav a {
     float: right;
     text-decoration: none;
     text-align: center;
-        
+
 }
 
-main{
-    background-color: lightseagreen;
-    grid-area: main;
+header{
+    background-image: url(./images/banner-night-skyline.jpg);
+    grid-area: header;
     border-radius: var(--main-radius);
-    padding-top: var(--main-padding);
+    padding: 15 px 20px;
+    text-align: right;
+    color: white;
 }
 
 
@@ -85,52 +87,62 @@ main{
 }
 
 .about-container{
-    background-color: aqua;
     grid-area: about-container;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
+
 } 
 
 .work-container{
-    background-color: cornflowerblue;
+    display: flex;
+    flex-wrap: wrap;
     grid-area: work-container;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
+    height: 500px;
+    
 }
 
-.flexbox-container{
-    display: flex;
-
+.work-container h4 strong{
+    display: block;
+    font-size: 75%;
+    position: relative;
 }
 
 .flexbox-item{
-    width: 90%;
-    height: 200px;
+    display: flex;
+    flex-wrap: wrap; 
+    width: 80%;
+    height: 100px;
     margin: 10px;
-    border: 3px solid black;
-    background-color: deeppink;
+    border: 3px solid teal;
+    background-color: lightgray;
+    
 }
 
 .flexbox-item-1{
-    min-height: 200px;
-    align-self: top;
-    /* order: 1; */
+    min-height: 300px;
+    width: 76%;
 }
 .flexbox-item-2{
-    min-height: 100px;
-    /* order: 2; */
-}
+    min-height: 50px;
+    max-width: 447px;
+   }
+   
 .flexbox-item-3{
-    min-height: 100px;
-    /* order: 3; */
+    min-height: 50px;
+    max-width: 447px;
+    
 }
 .flexbox-item-4{
-    min-height: 100px;
-    /* order: 4; */
+    min-height: 50px;
+    max-width: 447px;
+   
 }
 .flexbox-item-5{
-    min-height: 100px;
-    /* order: 5; */
+    min-height: 50px;
+    max-width: 447px;
+    
 }
 
 /* need format for titles and subtitles of projects in flexboxes */
@@ -139,20 +151,16 @@ main{
 
 }
 
-
-
-
-
-
 .contact-container{
-    background-color: crimson;
+    display: inline-block;
     grid-area: contact-container;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
+    position: relative;
+    bottom: 0;
 }
 
 footer{
-    background-color: teal;
     grid-area: footer;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
