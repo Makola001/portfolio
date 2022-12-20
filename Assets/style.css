@@ -1,50 +1,174 @@
+:root{
+    --main-radius:5px;
+    --main-padding:5px;
+    --main-bg-color: white; 
+}
+
+
+
 .container{
     display: grid;
-    height: 100vh;
+    height: 150vh;
     grid-template-columns: 0.3fr 1.5fr;
-    grid-template-rows: 0.3fr 0.5fr 1fr 3fr 0.8fr 0.2fr ;
+    grid-template-rows: 1fr 1.5fr 1.5fr 2fr 1.5fr 0.2fr;
     grid-template-areas:
     "nav nav"
     "main main"
-    "sidebar about"
-    "sidebar work"
-    "sidebar contact"
+    "sidebar1 about-container"
+    "sidebar2 work-container"
+    "sidebar3 contact-container"
     "footer footer";
+    grid-gap: 1.5rem;
+    font-family: "Inter" sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    background-color: var(--main-bg-color);
+    
 
 }
 
 nav{
     background-color: lightblue;
     grid-area: nav;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+nav a {
+    color: white;
+    padding: 15px 20px;
+    float: right;
+    text-decoration: none;
+    text-align: center;
+        
 }
 
 main{
     background-color: lightseagreen;
     grid-area: main;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
 }
 
-#sidebar{
-    background-color: lightsalmon;
-    grid-area: sidebar;
+
+#sidebar1{
+    background-color:var(--main-bg-color);
+    grid-area: sidebar1;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    border-right-style: solid;
+    border-color: darkblue;
+    text-align: right;
+    font-size: 40px;
 }
 
-#about{
+#sidebar2{
+    background-color:var(--main-bg-color);
+    grid-area: sidebar2;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    border-right-style: solid;
+    border-color: darkblue;
+    text-align: right;
+    font-size: 40px;
+}
+
+#sidebar3{
+    background-color:var(--main-bg-color);
+    grid-area: sidebar3;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    border-right-style: solid;
+    border-color: darkblue;
+    text-align: right;
+    font-size: 40px;
+}
+
+.about-container{
     background-color: aqua;
-    grid-area: about;
-}
+    grid-area: about-container;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+} 
 
-#work{
+.work-container{
     background-color: cornflowerblue;
-    grid-area: work;
+    grid-area: work-container;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
 }
 
-#contact{
+.flexbox-container{
+    display: flex;
+
+}
+
+.flexbox-item{
+    width: 90%;
+    height: 200px;
+    margin: 10px;
+    border: 3px solid black;
+    background-color: deeppink;
+}
+
+.flexbox-item-1{
+    min-height: 200px;
+    align-self: top;
+    /* order: 1; */
+}
+.flexbox-item-2{
+    min-height: 100px;
+    /* order: 2; */
+}
+.flexbox-item-3{
+    min-height: 100px;
+    /* order: 3; */
+}
+.flexbox-item-4{
+    min-height: 100px;
+    /* order: 4; */
+}
+.flexbox-item-5{
+    min-height: 100px;
+    /* order: 5; */
+}
+
+/* need format for titles and subtitles of projects in flexboxes */
+.work-container h4,h5 {
+    color: brown;
+
+}
+
+
+
+
+
+
+.contact-container{
     background-color: crimson;
-    grid-area: contact;
+    grid-area: contact-container;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
 }
 
 footer{
     background-color: teal;
     grid-area: footer;
-}
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+} 
 
+@media only screen and (max-width:550px) {
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.3fr 0.5fr 1fr 3fr 0.8fr 0.2fr;
+        grid-template-areas:
+        "nav"
+        "main"
+        "sidebar"
+        "about"
+        "work"
+        "contact"
+        "footer"
+    }
+}
