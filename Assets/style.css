@@ -5,12 +5,12 @@
 }
 
 
-
+/* Setting up grid layout */
 .container{
     display: grid;
     height: 100vh;
     grid-template-columns: 0.3fr 1.5fr;
-    grid-template-rows: 1fr 1.5fr 1.5fr 2fr 1.5fr 0.2fr;
+    grid-template-rows: 1fr 1fr 1.5fr 1.5fr 1.5fr 0.2fr;
     grid-template-areas:
     "nav nav"
     "header header"
@@ -19,49 +19,94 @@
     "sidebar3 contact-container"
     "footer footer";
     grid-gap: 0.5rem;
-    font-family: "Inter" sans-serif;
-    font-weight: 800;
-    text-transform: uppercase;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    text-transform: auto;
     background-color: var(--main-bg-color);
 
     
 }
 
+/* Nav bar styling */
 nav{
-    background-color: lightblue;
+    background-color: midnightblue;
+    border: 3px solid slategray;
+    color: var(--main-bg-color);
     grid-area: nav;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
+    position: fixed;
+    top: 0px;
+    width: 99%;
+    height: 95px;
+}
+
+nav h1 {
+    text-align: left;
+
 }
 
 nav a {
     color: white;
-    padding: 15px 20px;
+    padding: 10px 30px;
     float: right;
     text-decoration: none;
     text-align: center;
 
 }
 
+nav a:hover {
+    border-bottom: 1px solid;
+  }
+
+/* Need to figure out avatar in navbar */
+/* .avatar {
+    display: flex;
+    width: 90px;
+    height:90px;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: -1;
+    margin-top: 0px;
+    
+}
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+} */
+
+/* Header styling */
 header{
-    background-image: url(./images/banner-night-skyline.jpg);
+    /* background-color: darkseagreen; */
+    background-image: url(./images/banner-blue.jpg);
     grid-area: header;
     border-radius: var(--main-radius);
-    padding: 15 px 20px;
-    text-align: right;
-    color: white;
+    border: 3px solid slategray ;
+    padding: 15px 20px;
+    height: 40px;
+    width: 97.7%;
 }
 
+header p {
+    color: honeydew;
+    text-align: right;
+    bottom: 0;
+}
 
+/* sidebar styling and alignment for each corresponding section */
 #sidebar1{
     background-color:var(--main-bg-color);
     grid-area: sidebar1;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
+    padding-right: 10px;
     border-right-style: solid;
-    border-color: darkblue;
+    border-color: dodgerblue;
     text-align: right;
     font-size: 40px;
+    
 }
 
 #sidebar2{
@@ -69,8 +114,9 @@ header{
     grid-area: sidebar2;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
+    padding-right: 10px;
     border-right-style: solid;
-    border-color: darkblue;
+    border-color: dodgerblue;
     text-align: right;
     font-size: 40px;
 }
@@ -80,19 +126,22 @@ header{
     grid-area: sidebar3;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
+    padding-right: 10px;
     border-right-style: solid;
-    border-color: darkblue;
+    border-color: dodgerblue;
     text-align: right;
     font-size: 40px;
 }
 
+/* set up styling and alignment for About section */
 .about-container{
     grid-area: about-container;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
+    width: 85%;
 
 } 
-
+/* setting up work section with flex properties */
 .work-container{
     display: flex;
     flex-wrap: wrap;
@@ -106,77 +155,170 @@ header{
 .work-container h4 strong{
     display: block;
     font-size: 75%;
-    position: relative;
+ 
 }
 
+/* Alignment and styling of projects including background images */
 .flexbox-item{
     display: flex;
-    flex-wrap: wrap; 
-    width: 80%;
-    height: 100px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-end; 
+    height: 200px;
     margin: 10px;
-    border: 3px solid teal;
+    border: 3px solid dodgerblue;
     background-color: lightgray;
     
+   
 }
 
 .flexbox-item-1{
-    min-height: 300px;
-    width: 76%;
+    min-height: 200px;
+    width: 82%;
+    background: url(./images/project\ 1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 .flexbox-item-2{
-    min-height: 50px;
-    max-width: 447px;
-   }
+    height: 75px;
+    width: 40%;
+    background: url(./images/project\ 2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
    
 .flexbox-item-3{
-    min-height: 50px;
-    max-width: 447px;
+    height: 75px;
+    width: 40%; 
+    background: url(./images/project\ 3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
     
 }
 .flexbox-item-4{
-    min-height: 50px;
-    max-width: 447px;
+    height: 75px;
+    width: 40%;
+    background: url(./images/project\ 3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
    
 }
 .flexbox-item-5{
-    min-height: 50px;
-    max-width: 447px;
-    
+    height: 75px;
+    width: 40%;
+    background: url(./images/project\ 5.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;      
 }
 
-/* need format for titles and subtitles of projects in flexboxes */
+/*styling for project titles */
 .work-container h4,h5 {
     color: brown;
+    background-color:var(--main-bg-color);
+    border: 2px solid brown;
+    border-radius: var(--main-radius);
+    padding: var(--main-padding); 
 
 }
 
+/.flexbox-item .flexbox-item {
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+  }
+   
+  .flexbox-item:hover,
+  .flexbox-item:hover .flexbox-item {
+    box-shadow: inset 0px 0px 8px dodgerblue, 0 0 15px dodgerblue;
+  }
+
+/* link styling */
+.work-container a {
+    outline: none;
+    text-decoration: none;
+    padding: 2px 1px 0;
+  }
+  
+  .work-container a:link {
+    color: brown;
+  }
+  
+  .work-container a:visited {
+    color: purple;
+  }
+  
+  .work-container a:focus {
+    border-bottom: 1px solid;
+    background: blanchedalmond;
+  }
+  
+  .work-container a:hover {
+    border-bottom: 1px solid;
+    background: blanchedalmond;
+  }
+  
+  .work-container a:active {
+    background:blanchedalmond ;
+    color: lightsalmon;
+  }
+
+/* Contact section */
 .contact-container{
-    display: inline-block;
+    display: inline-block ;
     grid-area: contact-container;
-    border-radius: var(--main-radius);
-    padding-top: var(--main-padding);
-    position: relative;
-    bottom: 0;
+    padding: 15px 20px;
 }
+/* styling contact links */
+.contact-container a:link {
+    color: dodgerblue;
+    text-decoration: none;
+  }
+  
+  .contact-container a:visited {
+    color: purple;
+  }
+  
+  .contact-container a:focus {
+    border-bottom: 1px solid;
+    background: blanchedalmond;
+  }
+  
+  .contact-container a:hover {
+    border-bottom: 1px solid;
+    background: blanchedalmond;
+  }
+  
+  .contact-container a:active {
+    background:blanchedalmond ;
+    color: dodgerblue;
+  }
 
-footer{
-    grid-area: footer;
-    border-radius: var(--main-radius);
-    padding-top: var(--main-padding);
-} 
+/* Media query for break point of 454px.  */
+@media only screen and (max-width:454px) {
+    nav{
+        width: 100%;
+        height: 20%; 
+        font-size: 65%;       
+    }
 
-@media only screen and (max-width:550px) {
-    .container{
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.3fr 0.5fr 1fr 3fr 0.8fr 0.2fr;
-        grid-template-areas:
-        "nav"
-        "main"
-        "sidebar"
-        "about"
-        "work"
-        "contact"
-        "footer"
+    header {
+        display: none;
+    }
+
+    .about-container {
+        height: 40%;
+    }
+
+    .work-container {
+        height: 40%;
+    }
+
+    .contact-container {
+        height: 40%;
     }
 }
